@@ -13,7 +13,6 @@ $enrollment_id = (int) $data['enrollment_id'];
 $new_subject_id = (int) $data['subject_id'];
 
 try {
-    // Check if enrollment exists
     $check = $pdo->prepare("SELECT * FROM enrollments WHERE id = ?");
     $check->execute([$enrollment_id]);
     if ($check->rowCount() === 0) {
@@ -21,7 +20,6 @@ try {
         exit;
     }
 
-    // Update enrollment subject
     $stmt = $pdo->prepare("UPDATE enrollments SET subject_id = ? WHERE id = ?");
     $stmt->execute([$new_subject_id, $enrollment_id]);
 
