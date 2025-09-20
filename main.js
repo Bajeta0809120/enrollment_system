@@ -1,4 +1,3 @@
-// Wait for DOM
 document.addEventListener('DOMContentLoaded', () => {
   loadPrograms();
   loadYears();
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       let response;
       if (studentId) {
-        // Update student API (if implemented)
         payload.id = studentId;
         response = await fetch('api/updateStudent.php', {
           method: 'POST',
@@ -34,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify(payload)
         });
       } else {
-        // Add new student
         response = await fetch('api/addStudent.php', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -170,7 +167,7 @@ async function deleteStudent(id) {
     const result = await res.json();
     if (result.success) {
       alert(result.message);
-      loadStudents(); // reload the table
+      loadStudents();
     } else {
       alert('Delete failed: ' + result.message);
     }
