@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+form#studentForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+form#studentForm > * {
+  flex: 1 1 150px;
+  display: flex;
+  flex-direction: column;
+}
+form#studentForm label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+form#studentForm input[type="text"],
+form#studentForm input[type="number"],
+form#studentForm select {
+  padding: 6px 8px;
+  font-size: 14px;
+}
+#formSubmit {
+  flex: 0 0 120px;
+  padding: 8px 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+hr {
+  margin: 30px 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table th, table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+table th {
+  background-color: #f4f4f4;
+}
+@media (max-width: 600px) {
+  form#studentForm {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  form#studentForm > * {
+    flex: 1 1 auto;
+  }
+  #formSubmit {
+    flex: 1 1 auto;
+  }
+}
+
+#enrollment-section {
+  margin-top: 30px;
+  padding: 20px;
+}
+
+#enrollForm {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+

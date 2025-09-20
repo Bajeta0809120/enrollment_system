@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Enrollment System</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <h1>Student Enrollment System</h1>
+
+  <!-- Student Form -->
+  <section id="student-section">
+    <h2>Add / Edit Student</h2>
+    <form id="studentForm">
+      <input type="hidden" id="studentId" />
+
+      <label>Name:
+        <input type="text" id="studentName" required />
+      </label>
+
+      <label>Program:
+        <select id="programSelect" required>
+          <option value="">-- Select Program --</option>
+        </select>
+      </label>
+
+      <label>Year:
+        <select id="yearSelect" required>
+          <option value="">-- Select Year --</option>
+        </select>
+      </label>
+
+      <label>Semester:
+        <select id="semesterSelect" required>
+          <option value="">-- Select Semester --</option>
+        </select>
+      </label>
+
+      <label>Allowance:
+        <input type="number" id="allowanceInput" required />
+      </label>
+
+      <button type="submit">Add Student</button>
+    </form>
+
+    <h3>Students</h3>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Program</th>
+          <th>Year</th>
+          <th>Semester</th>
+          <th>Subjects</th>
+          <th>Allowance</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="studentTableBody"></tbody>
+    </table>
+  </section>
+
+  <hr />
+
+  <!-- Enrollment Section -->
+  <section id="enrollment-section">
+    <h2>Enrollment Management</h2>
+
+    <form id="enrollForm">
+      <label>Student:
+        <select id="studentSelect">
+          <option value="">-- Select Student --</option>
+        </select>
+      </label>
+
+      <label>Subject:
+        <select id="subjectSelect">
+          <option value="">-- Select Subject --</option>
+        </select>
+      </label>
+
+      <button type="submit">Enroll Student</button>
+    </form>
+
+    <h3>Enrolled Subjects</h3>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Student</th>
+          <th>Subject</th>
+          <th>Program</th>
+          <th>Year</th>
+          <th>Semester</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="enrollmentTableBody"></tbody>
+    </table>
+  </section>
+
+  <!-- Scripts -->
+  <script src="js/student.js"></script>
+  <script src="js/enrollment.js"></script>
+</body>
+</html>
