@@ -12,7 +12,6 @@ if (empty($data['id'])) {
 $id = (int) $data['id'];
 
 try {
-    // Check if any student is enrolled in this program
     $stmt = $pdo->prepare("SELECT COUNT(*) FROM students WHERE program_id = ?");
     $stmt->execute([$id]);
     if ($stmt->fetchColumn() > 0) {
@@ -20,7 +19,6 @@ try {
         exit;
     }
 
-    // Delete program
     $stmt = $pdo->prepare("DELETE FROM programs WHERE id = ?");
     $stmt->execute([$id]);
 
