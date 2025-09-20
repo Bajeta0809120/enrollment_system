@@ -3,7 +3,6 @@ header('Content-Type: application/json');
 require 'db.php';
 
 try {
-    // Assuming programs table has an institute_id foreign key to an institutes table
     $stmt = $pdo->query("
         SELECT p.id, p.name, i.name AS institute 
         FROM programs p
