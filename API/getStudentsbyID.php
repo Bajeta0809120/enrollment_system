@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-require_once 'db.php'; // Your PDO connection file
+require_once 'db.php';
 
 try {
     $stmt = $pdo->prepare("
