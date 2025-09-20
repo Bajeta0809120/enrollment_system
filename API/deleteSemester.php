@@ -12,7 +12,6 @@ if (empty($data['id'])) {
 $id = (int) $data['id'];
 
 try {
-    // Check if subjects exist for this semester
     $stmt = $pdo->prepare("SELECT COUNT(*) FROM subjects WHERE semester_id = ?");
     $stmt->execute([$id]);
     if ($stmt->fetchColumn() > 0) {
@@ -20,7 +19,6 @@ try {
         exit;
     }
 
-    // Delete semester
     $stmt2 = $pdo->prepare("DELETE FROM semesters WHERE id = ?");
     $stmt2->execute([$id]);
 
