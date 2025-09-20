@@ -9,6 +9,7 @@ if (empty($data['enrollment_id']) || empty($data['subject_id'])) {
     exit;
 }
 
+
 $enrollment_id = (int) $data['enrollment_id'];
 $new_subject_id = (int) $data['subject_id'];
 
