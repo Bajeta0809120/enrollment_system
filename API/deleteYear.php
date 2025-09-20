@@ -12,7 +12,6 @@ if (empty($data['id'])) {
 $id = (int) $data['id'];
 
 try {
-    // Check if semesters exist for this year
     $stmt = $pdo->prepare("SELECT COUNT(*) FROM semesters WHERE year_id = ?");
     $stmt->execute([$id]);
     if ($stmt->fetchColumn() > 0) {
@@ -20,7 +19,6 @@ try {
         exit;
     }
 
-    // Check if students enrolled for this year (optional)
     $stmt2 = $pdo->prepare("SELECT COUNT(*) FROM students WHERE year_id = ?");
     $stmt2->execute([$id]);
     if ($stmt2->fetchColumn() > 0) {
@@ -28,7 +26,6 @@ try {
         exit;
     }
 
-    // Delete year
     $stmt3 = $pdo->prepare("DELETE FROM years WHERE id = ?");
     $stmt3->execute([$id]);
 
