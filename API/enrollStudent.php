@@ -13,7 +13,6 @@ $student_id = (int) $data['student_id'];
 $subject_id = (int) $data['subject_id'];
 
 try {
-    // Check if enrollment already exists to avoid duplicates
     $check = $pdo->prepare("SELECT * FROM enrollments WHERE student_id = ? AND subject_id = ?");
     $check->execute([$student_id, $subject_id]);
     if ($check->rowCount() > 0) {
